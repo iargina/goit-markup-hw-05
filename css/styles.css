@@ -98,6 +98,11 @@ h6 {
   text-decoration: none;
 
   color: var(--primary-text-color);
+
+    /*transmition*/
+    transition-property: color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .current {
   color: var(--accent-color);
@@ -125,6 +130,10 @@ h6 {
 
   color: var(--grey-accent);
   text-decoration: none;
+    /*transmition*/
+    transition-property: color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contact-icon {
   margin-right: 10px;
@@ -355,6 +364,11 @@ width: 100%;
   justify-content: center;
   width: 170px;
   height: 92px;
+
+  /*transmition*/
+  transition-property:  border-color, color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover,
 .client-link:focus {
@@ -400,6 +414,11 @@ width: 100%;
   color: var(--primary-text-color);
   padding: 6px 22px;
   cursor: pointer;
+
+  /*trensmition*/
+  transition-property: background, box-shadow, border-radius,color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-filter:focus,
 .button-filter:hover {
@@ -435,6 +454,10 @@ width: 100%;
   margin-right: 30px;
   margin-bottom: 30px;
   position: relative;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-link {
   display: block;
@@ -447,6 +470,7 @@ width: 100%;
 }
 .project-img {
   position: relative;
+  overflow: hidden;
 }
 .project-overlay-text {
   position: absolute;
@@ -466,9 +490,17 @@ width: 100%;
 font-size: 18px;
 line-height: 1.555;
 opacity: 0;
+
+transform: translateY(100%);
+transition-property: transform;
+transition-duration: 1000ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+
 }
 .project-link:hover .project-overlay-text {
   opacity: 1;
+  transform: translateY(0%)
 }
 
 .project-item:nth-child(3n) {
@@ -554,6 +586,10 @@ opacity: 0;
   width: 44px;
   height: 44px;
   margin-top: 20px;
+
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icon-footer {
   fill: currentColor;
