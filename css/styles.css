@@ -63,6 +63,9 @@ h6 {
 .list-item:not(:last-child) {
   margin-right: 50px;
 }
+.list-item {
+  position: relative;
+}
 .contact-list {
   display: flex;
   margin-left: auto;
@@ -99,14 +102,26 @@ h6 {
 
   color: var(--primary-text-color);
 
-    /*transmition*/
-    transition-property: color, fill;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /*transmition*/
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .current {
   color: var(--accent-color);
+  display: inline-block;
 }
+.current::after {
+  content: "";
+  background: #2196f3;
+  border-radius: 2px;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
 .nav-link:focus,
 .nav-link:hover,
 .header-contact:focus,
@@ -130,10 +145,10 @@ h6 {
 
   color: var(--grey-accent);
   text-decoration: none;
-    /*transmition*/
-    transition-property: color, fill;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /*transmition*/
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contact-icon {
   margin-right: 10px;
@@ -243,7 +258,7 @@ h6 {
   display: flex;
   gap: 30px;
 }
-.img-text{
+.img-text {
   position: relative;
 }
 .whatwedo-text {
@@ -254,12 +269,12 @@ h6 {
   bottom: 0;
   margin: 0;
   background: rgba(47, 48, 58, 0.8);
-font-weight: 700;
-line-height: 1.2;
-justify-content: center;
-text-transform: uppercase;
-color: var(--white-color);
-width: 100%;
+  font-weight: 700;
+  line-height: 1.2;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--white-color);
+  width: 100%;
 }
 .benefit > .list {
   display: flex;
@@ -339,6 +354,10 @@ width: 100%;
   justify-content: center;
   width: 44px;
   height: 44px;
+  /*transmition*/
+  transition-property: color, fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icon {
   fill: currentColor;
@@ -366,7 +385,7 @@ width: 100%;
   height: 92px;
 
   /*transmition*/
-  transition-property:  border-color, color, fill;
+  transition-property: border-color, color, fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -416,7 +435,7 @@ width: 100%;
   cursor: pointer;
 
   /*trensmition*/
-  transition-property: background, box-shadow, border-radius,color;
+  transition-property: background, box-shadow, border-radius, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -476,7 +495,7 @@ width: 100%;
   position: absolute;
   display: flex;
   top: 0%;
-  left:0%;
+  left: 0%;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -487,20 +506,16 @@ width: 100%;
   background-color: var(--overlay-background);
   color: var(--white-color);
   font-weight: 400;
-font-size: 18px;
-line-height: 1.555;
-opacity: 0;
+  font-size: 18px;
+  line-height: 1.555;
 
-transform: translateY(100%);
-transition-property: transform;
-transition-duration: 1000ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-link:hover .project-overlay-text {
-  opacity: 1;
-  transform: translateY(0%)
+  transform: translateY(0%);
 }
 
 .project-item:nth-child(3n) {
@@ -610,7 +625,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   height: 100%;
   background-color: var(--backdrop-background);
-} 
+}
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -623,8 +638,9 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 528px;
   height: 581px;
   background: var(--white-color);
-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 .modal-close {
   display: flex;
@@ -643,5 +659,5 @@ border-radius: 4px;
 .modal-close-img {
   height: 11px;
   width: 11px;
- color: currentColor;
+  color: currentColor;
 }
